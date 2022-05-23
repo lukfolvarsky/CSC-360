@@ -1,20 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 
-export default function Post({dispatch,title, content, author, dateCreated, dateCompleted, complete, id, updateTodo}) {
+export default function Post({dispatch,title, content, author, dateCreated, dateCompleted, complete, id, updatePost,deletePost}) {
   
+  const [checked, updateChecked] = useState(false)
+
   function handleCheckbox(event){
-    console.log("hey");
-   dispatch({type:'UPDATE_POST', title, content, author, dateCreated, dateCompleted: Date().valueOf(), complete: event.target.checked})
-
-   console.log(dateCompleted);
-   updateTodo(id,dispatch);
+    updateChecked(event.target.checked)
+    const updatedPost = { title, content, author, dateCreated, dateCompleted: Date().valueOf(), complete: event.target.checked,id, updatePost,deletePost}
+    updatePost(id, updatedPost)
   }
-
-  function handleCheckboxDelete(event){
-    
-   dispatch({type:'DELETE_POST', title, content, author, dateCreated, dateCompleted: Date().valueOf(), complete: event.target.checked})
-  }
-
 
   return (
     <div>
@@ -34,12 +28,12 @@ export default function Post({dispatch,title, content, author, dateCreated, date
       <br/>
       Date Created: {dateCreated}
       <br/>
-      Date Completed: {dateCompleted}
+      Date Completed: {complete ? dateCompleted : "Incomplete"}
       <br/>
       Completed: {complete}
-      <input type = "checkbox" value= {complete} onChange={handleCheckbox} />
+      <input type = "checkbox" value= {checked} onChange={handleCheckbox} />
       <br/>
-      <button onChange={handleCheckboxDelete} type="button">Delete Task</button>
+      <input type = "button" value= "Delete Task" onClick= {() => deletePost(id)} />
     </div>
   );
 }

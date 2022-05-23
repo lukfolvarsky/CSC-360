@@ -3,7 +3,7 @@ function userReducer(state, action) {
       case "LOGIN":
           return action.username
       case "REGISTER":
-        return action.username;
+          return action.username;
       case "LOGOUT":
         return "";
       default:
@@ -20,22 +20,16 @@ function postReducer(state, action) {
             author: action.author,
             dateCreated: action.dateCreated, 
             dateCompleted: action.dateCompleted, 
-            complete: action.complete
+            complete: action.complete,
+            id: action.id
         };
         return [newPost, ...state];
         case 'UPDATE_POST':
-            console.log("--------------------------------");
-        const updatePost = {
-            title: action.title,
-            content: action.content,
-            author: action.author,
-            dateCreated: action.dateCreated, 
-            dateCompleted: action.dateCompleted, 
-            complete: action.complete
-        };
-        return [updatePost, ...state];
+            return action.updatedPosts
+    
         case 'DELETE_POST':
-         return state.filter(post => post.id !== action.id)
+         return action.updatedPosts
+
         default:
         return state;
     }

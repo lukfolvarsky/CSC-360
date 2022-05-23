@@ -1,21 +1,23 @@
 import React from "react";
 import Post from "./Post";
 
-export default function PostList({ posts = [], setPosts }) {
+export default function PostList({ posts = [], dispatch }) {
 
-  const updateTodo = (id, todo) => {
-    
-    const updatedPosts = [...posts]
-    updatedPosts[id] = todo
+  const updatePost = (id, updatedPost) => {
+    const updatedPosts = posts.map((post)=>post.id === id ? updatedPost : post)
+    dispatch({type: 'UPDATE_POST', updatedPosts})
+  }
 
-    setPosts(updatedPosts)
+  const deletePost = (id) => {
+const updatedPosts = posts.filter((post) => post.id !== id)
+dispatch({type: 'DELETE_POST', updatedPosts})
+
   }
 
   return (
     <div>
       {posts.map((p, i) => (
-        //<Post title={p.title} content={p.content} author={p.author} dateComplete={p.dateComplete} dateCreated={p.dateCreated} complete={p.complete} key={"post-" + i} />
-        <Post {...p} id={i} updateTodo={updateTodo} dispatch={updateTodo} key={"post-" + i} />
+        <Post {...p} key={p.id} updatePost={updatePost} deletePost={deletePost} />
       ))}
     </div>
   );

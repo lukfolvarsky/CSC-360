@@ -8,7 +8,7 @@ export default function CreatePost({ user, dispatch, posts }) {
   function handleContent (evt) { setContent(evt.target.value) }
   function handleCreate (evt) {  
    
-    dispatch({type:'CREATE_POST', title, content, author: user, dateCreated: Date().valueOf(), dateCompleted: null, complete: false})
+    dispatch({type:'CREATE_POST', title, content, author: user, dateCreated: Date().valueOf(), dateCompleted: null, complete: false, id: Math.floor(Math.random() * 1000000)})
 
   }
 
