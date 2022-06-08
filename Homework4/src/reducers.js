@@ -30,6 +30,12 @@ function postReducer(state, action) {
         case 'DELETE_POST':
          return action.updatedPosts
 
+         case 'SHOW_POST':
+            return action.updatedPosts
+
+         case 'CLEAR_CASE':
+          return[]
+
         default:
         return state;
     }

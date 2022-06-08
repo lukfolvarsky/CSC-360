@@ -8,18 +8,32 @@ export default function HomePage() {
 
   const {state, dispatch} = useContext(StateContext)
       
-  const [ posts, getPosts ] = useResource(() => ({
-    url: '/posts',
-    method: 'get'
-  }))
+  // const [ posts, getPosts ] = useResource(() => ({
+  //   url: '/posts',
+  //   method: 'get'
+  // }))
 
-  useEffect(getPosts, [])
+  const [ updatedPosts, getPosts ] = useResource((username) => ({
+      url: `/posts?author=${username}`,
+      method: 'get',
+    }))
+    
+  // useEffect(getPosts, [state.user])
 
   useEffect(() => {
-    if (posts && posts.data) {
-        dispatch({ type: 'FETCH_POSTS', posts: posts.data })
+    if (state.user) {
+      if (state.user.length > 0) {
+           getPosts(state.user)
+      }
     }
-  }, [posts])
+  }, [state.user])
 
-  return <PostList posts={state.posts} />
+  useEffect(() => {
+    if (updatedPosts && updatedPosts.data) {
+      console.log(updatedPosts)
+        dispatch({ type: 'SHOW_POST', updatedPosts: updatedPosts.data })
+    }
+  }, [updatedPosts])
+
+  return <PostList posts={state.posts} dispatch= {dispatch} />
 }

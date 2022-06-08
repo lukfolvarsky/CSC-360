@@ -13,7 +13,8 @@ export default function Login({dispatch}) {
 
   const [ user, login ] = useResource((username, password) => ({
     url: `/login/${encodeURI(username)}/${encodeURI(password)}`,
-    method: 'get'
+    method: 'get',
+    data: { username, password },
 }))
 
 
@@ -27,6 +28,27 @@ useEffect(() => {
 }
 } 
 }, [user])
+
+
+// const [ post, showPosts ] = useResource((username) => ({
+//   url: `/posts?author=${username}`,
+//   method: 'get',
+//   data: { username, password }
+// }))
+
+
+
+// useEffect(() => {
+// if (post && post.data) {
+
+//   const updatedPosts = post.data
+//   console.log(post.data)
+            
+//             dispatch({ type: 'SHOW_POST', updatedPosts})
+//             dispatch({ type: 'LOGIN', username: user.data[0].username })
+// } 
+// }, [post])
+
 
   return (
     <>

@@ -3,9 +3,11 @@ import React, {useState} from "react";
 import {Link} from 'react-navi'
 
 
-export default function Post({dispatch,title, content, author, dateCreated, dateCompleted, complete, id, updatePost,deletePost}) {
+export default function Post({title, content, author, dateCreated, dateCompleted, complete, id, updatePost,deletePost}) {
   
   const [checked, updateChecked] = useState(false)
+
+//dont need this here?
 
   function handleCheckbox(event){
     updateChecked(event.target.checked)
@@ -23,8 +25,8 @@ export default function Post({dispatch,title, content, author, dateCreated, date
         }}
       />
       <h3>{title}</h3>
-      <Link href={`/post/${id}`}><h3>{title}</h3></Link>
-      <Link href={`/post/${id}`}>View full post</Link>
+      {/* <Link href={`/post/${id}`}><h3>{title}</h3></Link>
+      <Link href={`/post/${id}`}>View full post</Link> */}
       <div> <b>Content: </b>{content}</div>
       <br />
       <i>
@@ -42,3 +44,5 @@ export default function Post({dispatch,title, content, author, dateCreated, date
     </div>
   );
 }
+
+// export default React.memo(Post)

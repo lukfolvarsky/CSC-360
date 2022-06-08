@@ -20,9 +20,9 @@ return (
         <Header text="My TO-DO List" />
       </ThemeContext.Provider>
       <UserBar user={state.user} dispatch={dispatch} />
-      {state.user && <Link href="/post/create">Create New Post</Link> }
+      {/* {state.user && <Link href="/post/create">Create New Post</Link> } */}
       {state.user && <CreatePost user={state.user} posts={state.posts} dispatch={dispatch}/>}
-      {state.user && <PostList posts={state.posts} dispatch={dispatch}/> }
+      {/* {state.user && <PostList posts={state.posts} dispatch={dispatch}/> } */}
     </div>
 </>
 )

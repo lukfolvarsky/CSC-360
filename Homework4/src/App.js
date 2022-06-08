@@ -7,7 +7,6 @@ import CreatePost from "./CreatePost";
 
 import StateContext from "./Context";
 
-
 import appReducer from "./reducers";
 import HeaderBar from "./pages/HeaderBar";
 import HomePage from "./pages/HomePage";

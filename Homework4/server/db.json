@@ -1,126 +1,34 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "TEST TEXT",
-      "content": "MORE content",
-      "author": "PAUL",
-      "dateCreated": "5/31/2022", 
-      "dateCompleted": "6/1/2022", 
-      "complete": true
-    },
-    {
-      "id": 2,
-      "title": "portal",
-      "content": "Some content",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "id": "4",
-      "title": "My new post",
-      "content": "Post content",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "id": "7774",
-      "title": "Post 7774",
-      "content": "Post content",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "MY NEW POST",
-      "content": "MY NEW POST",
-      "author": "test",
-      "id": "zCrgzDR",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "MY NEW POSTe",
-      "content": "MY NEW POSTe",
-      "author": "test",
-      "id": "37ARwUf",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "MY NEW POSTe555",
-      "content": "MY NEW POSTe",
-      "author": "test",
-      "id": "D2jxIWi",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "test",
-      "content": "test",
-      "author": "test",
-      "id": "j8wqgCY",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "test",
-      "content": "test",
-      "author": "paul",
-      "id": "hgYtG6j",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "xzc",
-      "content": "sdfsdfsd",
-      "id": "WMAnZyM",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "xzc",
-      "content": "sdfsdfsd",
-      "id": "kYMoAmw",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "MYNEWPOST",
-      "content": "MYNEWPOST",
-      "author": "paul",
-      "id": "kuRche6",
-      "dateCreated": "5/31/2022",
-      "complete": false
-    },
-    {
-      "title": "TEST",
-      "content": "TEST2",
-      "author": "paul",
-      "id": "Mk81dtv",
-      "dateCreated": "5/31/2022",
-      "complete": false
+      "title": "sdgdsfgsdf",
+      "content": "",
+      "author": "admin",
+      "dateCreated": "Tue Jun 07 2022 19:27:53 GMT-0500 (Central Daylight Time)",
+      "dateCompleted": "Tue Jun 07 2022 19:27:57 GMT-0500 (Central Daylight Time)",
+      "complete": false,
+      "id": 32898
     }
   ],
-
   "users": [
     {
       "id": 1,
-      "username": "paul",
+      "username": "Lukas",
       "password": "badpassword"
     },
     {
-      "username": "PAULTEST",
-      "password": "test",
+      "username": "admin",
+      "password": "admin",
       "id": 2
     },
     {
-      "username": "NEWTEST",
-      "password": "test",
+      "username": "123",
+      "password": "123",
       "id": 3
     },
     {
-      "username": "lukfolvarsky",
-      "password": "admin",
+      "username": "sdfasfda",
+      "password": "123",
       "id": 4
     }
   ]
